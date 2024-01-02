@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+<h2>“Appear weak when you are strong, and strong when you are weak.”
+― Sun Tzu, The Art of War</h2>
+<br>
+<input type="text" id="srch" onkeyup="myFunction()" placeholder="Search for countries">
+    <div class="tableFixHead">
+        <table data-toggle="table" id="navy_table">
+            <thead>
+                <tr>
+                    <th data-sortable="true">Country</th>
+                    <th data-sortable="true">Active Personnel</th>
+                    <th data-sortable="true">Para Military</th>
+                    <th data-sortable="true">Reserves</th>
+                    <th data-sortable="true">Total</th>
+                    <th data-sortable="true">Population 2023</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in army_data %}
+                    <tr>
+                        <td>{{ i.country }}</td>
+                        <td>{{ i.active }}</td>
+                        <td>{{ i.para }}</td>
+                        <td>{{ i.reserves }}</td>
+                        <td>{{ i.total }}</td>
+                        <td>{{ i.population }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
