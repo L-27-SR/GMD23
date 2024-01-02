@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+<h2>"The Captain goes down with the Ship"</h2>
+<br>
+    <input type="text" id="srch" onkeyup="myFunction()" placeholder="Search for countries">
+    <div class="tableFixHead">
+        <table data-toggle="table" id="navy_table">
+            <thead>
+                <tr>
+                    <th data-sortable="true">Country</th>
+                    <th data-sortable="true">Total Ships</th>
+                    <th data-sortable="true">Carriers</th>
+                    <th data-sortable="true">Heli Carriers</th>
+                    <th data-sortable="true">Submarines</th>
+                    <th data-sortable="true">Destroyers</th>
+                    <th data-sortable="true">Frigates</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in naval_data %}
+                    <tr>
+                        <td>{{ i.country }}</td>
+                        <td>{{ i.totalShips }}</td>
+                        <td>{{ i.carriers }}</td>
+                        <td>{{ i.heliCarriers }}</td>
+                        <td>{{ i.subs }}</td>
+                        <td>{{ i.destroyers }}</td>
+                        <td>{{ i.frigates }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
