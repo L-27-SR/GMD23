@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+<h2>“The Navy can lose us the war, but only the Air Force can win it.”</h2>
+<br>
+<input type="text" id="srch" onkeyup="myFunction()" placeholder="Search for countries">
+<div class="tableFixHead">
+    <table data-toggle="table" id="navy_table">
+        <thead>
+            <tr>
+                <th data-sortable="true">Country</th>
+                <th data-sortable="true">Total Aircrafts</th>
+                <th data-sortable="true">Air Force</th>
+                <th data-sortable="true">Army</th>
+                <th data-sortable="true">Navy</th>
+                <th data-sortable="true">Marines</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in air_data %}
+                <tr>
+                    <td>{{ i.country }}</td>
+                    <td>{{ i.totalAircraft }}</td>
+                    <td>{{ i.airForce }}</td>
+                    <td>{{ i.army }}</td>
+                    <td>{{ i.navy }}</td>
+                    <td>{{ i.marines }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<footer class="mb-5 small text-left">
+    special cipher: tkgv ittjit n(-7)8
+</footer>
+{% endblock %}
