@@ -11,8 +11,8 @@ Front-end:
 - JavaScript
 - CSS
 - Bootstrap
+- 
 Back-end:
-
 - Python
 - sqlite3
 Frameworks:
